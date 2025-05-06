@@ -10,6 +10,9 @@ def lambda_handler(event, context):
     
     # しきい値を環境変数から取得（デフォルト: 0.1 USD）
     THRESHOLD = float(os.environ.get('THRESHOLD', '0.1'))
+
+    # アカウント名を取得
+    ACCOUNT_NAME = os.environ.get('ACCOUNT_NAME')
     
     # AWS Cost Explorerクライアントを作成
     ce_client = boto3.client('ce')
@@ -33,6 +36,7 @@ def lambda_handler(event, context):
         
         # メッセージを作成
         message = f"📊 AWSコストチェック（{yesterday.strftime('%Y-%m-%d')}）\n"
+        message += f"- 対象アカウント: {ACCOUNT_NAME} \n"
         message += f"- 使用量: {cost:.6f} USD\n"
         
         # しきい値チェック
