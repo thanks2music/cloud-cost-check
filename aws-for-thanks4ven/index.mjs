@@ -2,12 +2,12 @@ import {
   CostExplorerClient,
   GetCostAndUsageCommand,
 } from "@aws-sdk/client-cost-explorer";
-import { STSClient, GetCallerIdentityCommand } from "@aws-sdk/client-sts";
 
 export const handler = async (event) => {
   // 環境変数の取得
   const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
   const THRESHOLD = parseFloat(process.env.THRESHOLD || "0.1");
+  const ACCOUNT_NAME = process.env.ACCOUNT_NAME;
 
   // AWS Cost Explorerクライアントを作成
   const client = new CostExplorerClient({ region: "us-east-1" });
@@ -23,11 +23,6 @@ export const handler = async (event) => {
   };
 
   try {
-    // アカウント情報を取得
-    const stsCommand = new GetCallerIdentityCommand({});
-    const stsResponse = await stsClient.send(stsCommand);
-    const accountId = stsResponse.Account;
-
     // アカウント名の設定（オプションで環境変数から取得も可能）
     const accountName =
       process.env.ACCOUNT_NAME || `AWS Account (${accountId})`;
@@ -49,7 +44,7 @@ export const handler = async (event) => {
 
     // メッセージを作成
     let message = `📊 AWSコストチェック（${formatDate(yesterday)}）\n`;
-    message += `- 対象アカウント: ${accountName}\n`;
+    message += `- 対象アカウント: ${ACCOUNT_NAME}\n`;
     message += `- 使用量: ${cost.toFixed(6)} USD\n`;
 
     // しきい値チェック
