@@ -1,5 +1,5 @@
-# Cost Check
+# Cost Check for Cloud
 
-- Google Cloud
 - AWS
-- ...etc
+- Google Cloud
+- Azure
