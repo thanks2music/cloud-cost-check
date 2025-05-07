@@ -1,0 +1,15 @@
+{
+  "name": "gcp-cost-checker",
+  "version": "1.0.0",
+  "description": "GCP cost checker with Slack notification",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "deploy": "gcloud functions deploy checkGCPCosts --runtime nodejs20 --trigger-http --allow-unauthenticated --env-vars-file .env.yaml"
+  },
+  "dependencies": {
+    "@google-cloud/billing": "^4.0.0",
+    "google-auth-library": "^9.0.0"
+  }
+}
