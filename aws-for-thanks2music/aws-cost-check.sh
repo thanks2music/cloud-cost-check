@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Slack Webhookの読み込み
-source "$(dirname "$0")/slack-webhook.env"
+source "$(dirname "$0")/.env"
 
 # 本日の日付を取得
 TODAY=$(date +%Y-%m-%d)
