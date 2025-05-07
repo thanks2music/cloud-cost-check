@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@google-cloud/billing": "^4.0.0",
+    "@google-cloud/billing-budgets": "^6.0.1",
+    "@google-cloud/secret-manager": "^6.0.1",
     "google-auth-library": "^9.0.0"
   }
 }
