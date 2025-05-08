@@ -70,7 +70,8 @@ export async function checkGCPCosts(req, res) {
     // 各予算の実績コストを確認し、しきい値を超えるものを通知
     let hasExceededThreshold = false;
     let totalMessage = `📊 GCPコストチェック（${formatDate(yesterday)}）\n`;
-    totalMessage += `- 対象アカウント: ${ACCOUNT_NAME} (${BILLING_ACCOUNT_ID})\n\n`;
+    totalMessage += `- 対象アカウント: ${ACCOUNT_NAME}\n`;
+    totalMessage += `- 請求先アカウントID: ${BILLING_ACCOUNT_ID}\n\n`;
 
     for (const budget of budgets) {
       // 予算情報の抽出
