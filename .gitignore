@@ -1,2 +1,27 @@
+# Node.js
+node_modules/
+npm-debug.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# 環境変数ファイル（決してコミットしない）
 .env
 .env.yaml
+.env.json
+config.yaml
+*.pem
+*.key
+
+# OS関連
+.DS_Store
+Thumbs.db
+
+# エディタ関連
+.vscode/
+.idea/
+*.swp
