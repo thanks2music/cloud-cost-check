@@ -38,14 +38,14 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        working-directory: digitalocean
+        working-directory: digitalocean/nodejs/thanks4ven
         run: pnpm install
 
       - name: Run cost checker
-        working-directory: digitalocean
+        working-directory: digitalocean/nodejs/thanks4ven
         env:
           DO_API_TOKEN: ${{ secrets.DO_API_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           THRESHOLD: ${{ secrets.DO_COST_THRESHOLD || '0.1' }}
           ACCOUNT_NAME: ${{ secrets.DO_ACCOUNT_NAME || 'DigitalOcean Account' }}
-        run: pnpm start
+        run: node src/cost-checker.mjs
