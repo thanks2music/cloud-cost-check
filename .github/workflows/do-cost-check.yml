@@ -38,11 +38,11 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        working-directory: digitalocean/nodejs/thanks4ven
+        working-directory: digital-ocean/nodejs/thanks4ven
         run: pnpm install
 
       - name: Run cost checker
-        working-directory: digitalocean/nodejs/thanks4ven
+        working-directory: digital-ocean/nodejs/thanks4ven
         env:
           DO_API_TOKEN: ${{ secrets.DO_API_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
