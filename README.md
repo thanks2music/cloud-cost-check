@@ -9,6 +9,9 @@
 
 ```
 / (リポジトリルート)
+├── .github/
+│   ├── workflows/
+│   │   └── do-cost-check.yml
 ├── aws/
 │   ├── nodejs/
 │   │   ├── thanks4ven/
@@ -35,7 +38,13 @@
 ├── azure/
 │   └── README.md  # 今後の実装のためのプレースホルダー
 ├── digitalocean/
-│   └── README.md  # 今後の実装のためのプレースホルダー
+│   ├── nodejs/
+│   │   ├── thanks4ven/
+│   │   │   ├── src/
+│   │   │   ├──── cost-checker.mjs
+│   │   │   ├── package.json
+│   │   │   └── .env.sample
+│   │   └── README.md
 ├── .github/
 │   └── workflows/
 │       ├── aws-nodejs-deploy.yml
