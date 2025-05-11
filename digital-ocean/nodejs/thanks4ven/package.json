@@ -5,7 +5,7 @@
   "type": "module",
   "main": "cost-checker.mjs",
   "scripts": {
-    "start": "node cost-checker.mjs"
+    "start": "node src/cost-checker.mjs"
   },
   "repository": {
     "type": "git",
