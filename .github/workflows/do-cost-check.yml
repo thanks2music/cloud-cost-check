@@ -46,6 +46,6 @@ jobs:
         env:
           DO_API_TOKEN: ${{ secrets.DO_API_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          THRESHOLD: ${{ vars.DO_COST_THRESHOLD || '0.1' }}
-          ACCOUNT_NAME: ${{ vars.DO_ACCOUNT_NAME || 'DigitalOcean Account' }}
+          DO_COST_THRESHOLD: ${{ vars.DO_COST_THRESHOLD || '0.1' }}
+          DO_ACCOUNT_NAME: ${{ vars.DO_ACCOUNT_NAME || 'DigitalOcean Account' }}
         run: node src/cost-checker.mjs
