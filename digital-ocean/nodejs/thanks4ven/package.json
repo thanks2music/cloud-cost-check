@@ -1,19 +1,26 @@
 {
-  "name": "thanks4ven",
+  "name": "do-cost-checker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "DigitalOcean cost monitoring tool for GitHub Actions",
+  "type": "module",
+  "main": "cost-checker.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node cost-checker.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanks2music/cloud-cost-check.git"
+  },
+  "keywords": [
+    "digitalocean",
+    "cost",
+    "monitoring",
+    "github-actions"
+  ],
+  "author": "thanks2music",
+  "license": "MIT",
   "dependencies": {
-    "axios": "^1.9.0",
-    "dotenv": "^16.5.0",
-    "luxon": "^3.6.1",
-    "node-cron": "^4.0.0",
-    "winston": "^3.17.0"
+    "axios": "^1.6.0",
+    "luxon": "^3.4.3"
   }
 }
