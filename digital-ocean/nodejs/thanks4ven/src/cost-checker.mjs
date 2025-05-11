@@ -6,8 +6,8 @@ dotenv.config();
 // 環境変数の取得
 const DO_API_TOKEN = process.env.DO_API_TOKEN;
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
-const THRESHOLD = parseFloat(process.env.THRESHOLD || "0.1");
-const ACCOUNT_NAME = process.env.ACCOUNT_NAME || "DigitalOcean Account";
+const THRESHOLD = parseFloat(process.env.DO_COST_THRESHOLD || "0.1");
+const ACCOUNT_NAME = process.env.DO_ACCOUNT_NAME || "DigitalOcean Account";
 
 // エラーが発生した場合にプロセスを終了せずエラー内容を返す関数
 const handleError = async (message, error) => {
