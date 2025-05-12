@@ -2,7 +2,7 @@ name: DigitalOcean Cost Check
 
 on:
   schedule:
-    - cron: "0 0 * * *" # 日本時間の午前9時（UTC 0時 = JST 9時）に実行
+    - cron: "0 1 * * *" # 日本時間の午前9時（UTC 0時 = JST 9時）に実行
   workflow_dispatch: # 手動実行用
 
 jobs:
